@@ -1,0 +1,19 @@
+/* movie-detail.component.css */
+div {
+    text-align: center;
+  }
+  
+  img {
+    width: 50%;
+    margin: 20px 0;
+  }
+  .backdrops-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .backdrop-item {
+    margin: 10px;
+  }
+  

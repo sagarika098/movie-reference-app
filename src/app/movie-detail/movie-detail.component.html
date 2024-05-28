@@ -1,0 +1,33 @@
+<!-- movie-detail.component.html -->
+<div *ngIf="movie">
+    <h1>{{ movie.title }}</h1>
+    <img [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path" alt="{{ movie.title }}">
+    <p>{{ movie.overview }}</p>
+    <p><strong>Release Date:</strong> {{ movie.release_date | date }}</p>
+    <p><strong>Rating:</strong> {{ movie.vote_average }}</p>
+    <p><strong>Rating:</strong> {{ movie.overview }}</p>
+  </div>
+  <h1>Movie Backdrop Images</h1>
+<div class="backdrops-container">
+  <div *ngFor="let backdrop of movieImage.backdrops" class="backdrop-item">
+    <img [src]="'https://image.tmdb.org/t/p/original' + backdrop.file_path" 
+         [width]="200" 
+         [height]="200">
+  </div>
+</div>
+<div *ngIf="movieReference">
+  <h1>Refered Movies</h1>
+  <div class="movies-container">
+    <div *ngFor="let movie of movieReference.results" class="movie-item">
+      <div class="movie-details">
+        <h2>{{ movie.original_title }}</h2>
+        <p>{{ movie.overview }}</p>
+        <p>Release Date: {{ movie.release_date }}</p>
+        <p>Vote Average: {{ movie.vote_average }}</p>
+      </div>
+      <img [src]="'https://image.tmdb.org/t/p/original' + movie.backdrop_path" 
+           [alt]="movie.original_title + ' Backdrop Image'"
+           class="movie-backdrop" height="200" width="200">
+    </div>
+  </div>
+</div>
