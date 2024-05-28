@@ -1,0 +1,17 @@
+<div class="container">
+    <h1>Upcoming Movies</h1>
+    <div *ngIf="upcomingMovies.length > 0; else noMovies">
+      <div class="grid-container">
+        <div *ngFor="let movie of upcomingMovies" class="card" (click)="onCardClick(movie)">
+          <img [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path" alt="{{ movie.title }}" width="200" height="200">
+          <h2>{{ movie.title }}</h2>
+          <p>{{ movie.overview }}</p>
+          <p><strong>Release Date:</strong> {{ movie.release_date}}</p>
+        </div>
+      </div>
+    </div>
+    <ng-template #noMovies>
+      <p>No upcoming movies found.</p>
+    </ng-template>
+  </div>
+  
